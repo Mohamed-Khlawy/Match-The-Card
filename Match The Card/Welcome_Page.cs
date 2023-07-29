@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Match_The_Card
 {
+    public enum GameLevel
+    {
+        Beginner,
+        Challenger,
+        Expert
+    }
     public partial class Welcome_Page : Form
     {
-        public enum Level
-        {
-            Beginner,
-            Challenger,
-            Expert
-        }
+        GameLevel selectedLevel;
         int NumberOfCards = 0;
         int NumberOfPlayers = 0;
-        Level GameLevel;
         public Welcome_Page()
         {
             InitializeComponent();
@@ -88,21 +88,21 @@ namespace Match_The_Card
                 btn_Beginner.Enabled = false;
                 btn_Challenger.Enabled = true;
                 btn_Expert.Enabled = true;
-                GameLevel = Level.Beginner;
+                selectedLevel = GameLevel.Beginner;
             }
             else if (btn == btn_Challenger)
             {
                 btn_Beginner.Enabled = true;
                 btn_Challenger.Enabled = false;
                 btn_Expert.Enabled = true;
-                GameLevel = Level.Challenger;
+                selectedLevel = GameLevel.Challenger;
             }
             else if (btn == btn_Expert)
             {
                 btn_Beginner.Enabled = true;
                 btn_Challenger.Enabled = true;
                 btn_Expert.Enabled = false;
-                GameLevel = Level.Expert;
+                selectedLevel = GameLevel.Expert;
             }
             Start.Enabled = true;
         }
@@ -132,6 +132,7 @@ namespace Match_The_Card
             else if(NumberOfCards==100)
             {
                 _100Cards _100Cards = new _100Cards();
+                _100Cards.GameLevel = selectedLevel;
                 _100Cards.Show();
                 this.Hide();
             }
