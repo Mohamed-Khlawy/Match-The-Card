@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_100Cards));
             this.Game_Panel = new System.Windows.Forms.Panel();
             this.Timer_Panel = new System.Windows.Forms.Panel();
-            this.Stop = new System.Windows.Forms.Button();
-            this.Hide = new System.Windows.Forms.Button();
-            this.Timer = new System.Windows.Forms.Label();
+            this.Resume_Pause_Timer = new System.Windows.Forms.Button();
+            this.Hide_Appear_Timer = new System.Windows.Forms.Button();
+            this.lbl_Timer = new System.Windows.Forms.Label();
             this.Points_Panel = new System.Windows.Forms.Panel();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.Resume_Pause = new System.Windows.Forms.Button();
             this.Summary = new System.Windows.Forms.Button();
             this.Close = new System.Windows.Forms.Button();
+            this.Game_Timer = new System.Windows.Forms.Timer(this.components);
             this.Timer_Panel.SuspendLayout();
             this.Points_Panel.SuspendLayout();
             this.Buttons_Panel.SuspendLayout();
@@ -64,47 +66,49 @@
             // 
             // Timer_Panel
             // 
-            this.Timer_Panel.Controls.Add(this.Stop);
-            this.Timer_Panel.Controls.Add(this.Hide);
-            this.Timer_Panel.Controls.Add(this.Timer);
+            this.Timer_Panel.Controls.Add(this.Resume_Pause_Timer);
+            this.Timer_Panel.Controls.Add(this.Hide_Appear_Timer);
+            this.Timer_Panel.Controls.Add(this.lbl_Timer);
             this.Timer_Panel.Location = new System.Drawing.Point(1065, 12);
             this.Timer_Panel.Name = "Timer_Panel";
             this.Timer_Panel.Size = new System.Drawing.Size(714, 206);
             this.Timer_Panel.TabIndex = 1;
             // 
-            // Stop
+            // Resume_Pause_Timer
             // 
-            this.Stop.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Stop.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stop.ForeColor = System.Drawing.Color.White;
-            this.Stop.Location = new System.Drawing.Point(428, 104);
-            this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(255, 80);
-            this.Stop.TabIndex = 27;
-            this.Stop.Text = "Stop Timer";
-            this.Stop.UseVisualStyleBackColor = false;
+            this.Resume_Pause_Timer.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Resume_Pause_Timer.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Resume_Pause_Timer.ForeColor = System.Drawing.Color.White;
+            this.Resume_Pause_Timer.Location = new System.Drawing.Point(428, 104);
+            this.Resume_Pause_Timer.Name = "Resume_Pause_Timer";
+            this.Resume_Pause_Timer.Size = new System.Drawing.Size(255, 80);
+            this.Resume_Pause_Timer.TabIndex = 27;
+            this.Resume_Pause_Timer.Text = "Pause Timer";
+            this.Resume_Pause_Timer.UseVisualStyleBackColor = false;
+            this.Resume_Pause_Timer.Click += new System.EventHandler(this.Resume_Pause_Timer_Timer_Click);
             // 
-            // Hide
+            // Hide_Appear_Timer
             // 
-            this.Hide.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Hide.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hide.ForeColor = System.Drawing.Color.White;
-            this.Hide.Location = new System.Drawing.Point(31, 104);
-            this.Hide.Name = "Hide";
-            this.Hide.Size = new System.Drawing.Size(255, 80);
-            this.Hide.TabIndex = 26;
-            this.Hide.Text = "Hide Timer";
-            this.Hide.UseVisualStyleBackColor = false;
+            this.Hide_Appear_Timer.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.Hide_Appear_Timer.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hide_Appear_Timer.ForeColor = System.Drawing.Color.White;
+            this.Hide_Appear_Timer.Location = new System.Drawing.Point(31, 104);
+            this.Hide_Appear_Timer.Name = "Hide_Appear_Timer";
+            this.Hide_Appear_Timer.Size = new System.Drawing.Size(255, 80);
+            this.Hide_Appear_Timer.TabIndex = 26;
+            this.Hide_Appear_Timer.Text = "Hide Timer";
+            this.Hide_Appear_Timer.UseVisualStyleBackColor = false;
+            this.Hide_Appear_Timer.Click += new System.EventHandler(this.Hide_Appear_Timer_Click);
             // 
-            // Timer
+            // lbl_Timer
             // 
-            this.Timer.Font = new System.Drawing.Font("Tahoma", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Timer.ForeColor = System.Drawing.Color.White;
-            this.Timer.Location = new System.Drawing.Point(138, 13);
-            this.Timer.Name = "Timer";
-            this.Timer.Size = new System.Drawing.Size(445, 65);
-            this.Timer.TabIndex = 25;
-            this.Timer.Text = "Timer: ";
+            this.lbl_Timer.Font = new System.Drawing.Font("Tahoma", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Timer.ForeColor = System.Drawing.Color.White;
+            this.lbl_Timer.Location = new System.Drawing.Point(179, 16);
+            this.lbl_Timer.Name = "lbl_Timer";
+            this.lbl_Timer.Size = new System.Drawing.Size(445, 65);
+            this.lbl_Timer.TabIndex = 25;
+            this.lbl_Timer.Text = "Timer: ";
             // 
             // Points_Panel
             // 
@@ -280,6 +284,11 @@
             this.Close.Text = "Close Game";
             this.Close.UseVisualStyleBackColor = false;
             // 
+            // Game_Timer
+            // 
+            this.Game_Timer.Interval = 1000;
+            this.Game_Timer.Tick += new System.EventHandler(this.Game_Timer_Tick);
+            // 
             // _100Cards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -310,9 +319,9 @@
         private System.Windows.Forms.Panel Timer_Panel;
         private System.Windows.Forms.Panel Points_Panel;
         private System.Windows.Forms.Panel Buttons_Panel;
-        private System.Windows.Forms.Label Timer;
-        private System.Windows.Forms.Button Stop;
-        private System.Windows.Forms.Button Hide;
+        private System.Windows.Forms.Label lbl_Timer;
+        private System.Windows.Forms.Button Resume_Pause_Timer;
+        private System.Windows.Forms.Button Hide_Appear_Timer;
         private System.Windows.Forms.Label Player1Name;
         private System.Windows.Forms.Label Player3Name;
         private System.Windows.Forms.Label Player2Name;
@@ -327,5 +336,6 @@
         private System.Windows.Forms.Button Resume_Pause;
         private System.Windows.Forms.Button Summary;
         private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Timer Game_Timer;
     }
 }
