@@ -131,8 +131,8 @@ namespace Match_The_Card
             }
             else if(NumberOfCards==100)
             {
-                _100Cards _100Cards = new _100Cards();
-                _100Cards.GameLevel = selectedLevel;
+                _100Cards _100Cards = new _100Cards(NumberOfPlayers, selectedLevel);
+                //_100Cards.GameLevel = selectedLevel;
                 _100Cards.Show();
                 this.Hide();
             }
