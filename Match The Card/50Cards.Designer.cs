@@ -51,14 +51,14 @@
             this.Buttons_Panel = new System.Windows.Forms.Panel();
             this.New = new System.Windows.Forms.Button();
             this.Points_Panel = new System.Windows.Forms.Panel();
+            this.label_Player2Name = new System.Windows.Forms.Label();
+            this.label_Player3Name = new System.Windows.Forms.Label();
+            this.label_Player1Name = new System.Windows.Forms.Label();
             this.Resume_Pause_Timer = new System.Windows.Forms.Button();
             this.Hide_Appear_Timer = new System.Windows.Forms.Button();
             this.lbl_Timer = new System.Windows.Forms.Label();
             this.Timer_Panel = new System.Windows.Forms.Panel();
             this.Game_Panel = new System.Windows.Forms.Panel();
-            this.label_Player1Name = new System.Windows.Forms.Label();
-            this.label_Player3Name = new System.Windows.Forms.Label();
-            this.label_Player2Name = new System.Windows.Forms.Label();
             this.menuItems.SuspendLayout();
             this.Buttons_Panel.SuspendLayout();
             this.Points_Panel.SuspendLayout();
@@ -156,14 +156,14 @@
             // pageColorToolStripMenuItem
             // 
             this.pageColorToolStripMenuItem.Name = "pageColorToolStripMenuItem";
-            this.pageColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pageColorToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.pageColorToolStripMenuItem.Text = "Page Color";
             this.pageColorToolStripMenuItem.Click += new System.EventHandler(this.pageColorToolStripMenuItem_Click);
             // 
             // fontColorToolStripMenuItem
             // 
             this.fontColorToolStripMenuItem.Name = "fontColorToolStripMenuItem";
-            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.fontColorToolStripMenuItem.Text = "Font Color";
             this.fontColorToolStripMenuItem.Click += new System.EventHandler(this.fontColorToolStripMenuItem_Click);
             // 
@@ -219,14 +219,14 @@
             // darkGrayModeToolStripMenuItem
             // 
             this.darkGrayModeToolStripMenuItem.Name = "darkGrayModeToolStripMenuItem";
-            this.darkGrayModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.darkGrayModeToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.darkGrayModeToolStripMenuItem.Text = "Dark Gray Mode";
             this.darkGrayModeToolStripMenuItem.Click += new System.EventHandler(this.darkGrayModeToolStripMenuItem_Click);
             // 
             // whiteModeToolStripMenuItem
             // 
             this.whiteModeToolStripMenuItem.Name = "whiteModeToolStripMenuItem";
-            this.whiteModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.whiteModeToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.whiteModeToolStripMenuItem.Text = "White Mode";
             this.whiteModeToolStripMenuItem.Click += new System.EventHandler(this.whiteModeToolStripMenuItem_Click);
             // 
@@ -286,6 +286,36 @@
             this.Points_Panel.Size = new System.Drawing.Size(714, 433);
             this.Points_Panel.TabIndex = 5;
             // 
+            // label_Player2Name
+            // 
+            this.label_Player2Name.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
+            this.label_Player2Name.ForeColor = System.Drawing.Color.White;
+            this.label_Player2Name.Location = new System.Drawing.Point(28, 119);
+            this.label_Player2Name.Name = "label_Player2Name";
+            this.label_Player2Name.Size = new System.Drawing.Size(212, 50);
+            this.label_Player2Name.TabIndex = 37;
+            this.label_Player2Name.Text = "Player2";
+            // 
+            // label_Player3Name
+            // 
+            this.label_Player3Name.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
+            this.label_Player3Name.ForeColor = System.Drawing.Color.White;
+            this.label_Player3Name.Location = new System.Drawing.Point(28, 202);
+            this.label_Player3Name.Name = "label_Player3Name";
+            this.label_Player3Name.Size = new System.Drawing.Size(212, 50);
+            this.label_Player3Name.TabIndex = 36;
+            this.label_Player3Name.Text = "Player3";
+            // 
+            // label_Player1Name
+            // 
+            this.label_Player1Name.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
+            this.label_Player1Name.ForeColor = System.Drawing.Color.White;
+            this.label_Player1Name.Location = new System.Drawing.Point(28, 36);
+            this.label_Player1Name.Name = "label_Player1Name";
+            this.label_Player1Name.Size = new System.Drawing.Size(212, 50);
+            this.label_Player1Name.TabIndex = 35;
+            this.label_Player1Name.Text = "Player1";
+            // 
             // Resume_Pause_Timer
             // 
             this.Resume_Pause_Timer.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -342,36 +372,6 @@
             this.Game_Panel.Name = "Game_Panel";
             this.Game_Panel.Size = new System.Drawing.Size(686, 920);
             this.Game_Panel.TabIndex = 3;
-            // 
-            // label_Player1Name
-            // 
-            this.label_Player1Name.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
-            this.label_Player1Name.ForeColor = System.Drawing.Color.White;
-            this.label_Player1Name.Location = new System.Drawing.Point(28, 36);
-            this.label_Player1Name.Name = "label_Player1Name";
-            this.label_Player1Name.Size = new System.Drawing.Size(212, 50);
-            this.label_Player1Name.TabIndex = 35;
-            this.label_Player1Name.Text = "Player1";
-            // 
-            // label_Player3Name
-            // 
-            this.label_Player3Name.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
-            this.label_Player3Name.ForeColor = System.Drawing.Color.White;
-            this.label_Player3Name.Location = new System.Drawing.Point(28, 202);
-            this.label_Player3Name.Name = "label_Player3Name";
-            this.label_Player3Name.Size = new System.Drawing.Size(212, 50);
-            this.label_Player3Name.TabIndex = 36;
-            this.label_Player3Name.Text = "Player3";
-            // 
-            // label_Player2Name
-            // 
-            this.label_Player2Name.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
-            this.label_Player2Name.ForeColor = System.Drawing.Color.White;
-            this.label_Player2Name.Location = new System.Drawing.Point(28, 119);
-            this.label_Player2Name.Name = "label_Player2Name";
-            this.label_Player2Name.Size = new System.Drawing.Size(212, 50);
-            this.label_Player2Name.TabIndex = 37;
-            this.label_Player2Name.Text = "Player2";
             // 
             // _50Cards
             // 

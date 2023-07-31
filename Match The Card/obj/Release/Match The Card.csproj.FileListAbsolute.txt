@@ -1,0 +1,13 @@
+G:\.NET\Projects\Match-The-Card\Match The Card\bin\Release\Match The Card.exe.config
+G:\.NET\Projects\Match-The-Card\Match The Card\bin\Release\Match The Card.exe
+G:\.NET\Projects\Match-The-Card\Match The Card\bin\Release\Match The Card.pdb
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match The Card.csproj.AssemblyReference.cache
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match The Card.csproj.SuggestedBindingRedirects.cache
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match_The_Card._100Cards.resources
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match_The_Card._50Cards.resources
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match_The_Card.Properties.Resources.resources
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match_The_Card.Welcome_Page.resources
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match The Card.csproj.GenerateResource.cache
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match The Card.csproj.CoreCompileInputs.cache
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match The Card.exe
+G:\.NET\Projects\Match-The-Card\Match The Card\obj\Release\Match The Card.pdb

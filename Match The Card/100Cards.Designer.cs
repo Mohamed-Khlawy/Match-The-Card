@@ -339,14 +339,14 @@
             // pageColorToolStripMenuItem
             // 
             this.pageColorToolStripMenuItem.Name = "pageColorToolStripMenuItem";
-            this.pageColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pageColorToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.pageColorToolStripMenuItem.Text = "Page Color";
             this.pageColorToolStripMenuItem.Click += new System.EventHandler(this.pageColorToolStripMenuItem_Click);
             // 
             // fontColorToolStripMenuItem
             // 
             this.fontColorToolStripMenuItem.Name = "fontColorToolStripMenuItem";
-            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.fontColorToolStripMenuItem.Text = "Font Color";
             this.fontColorToolStripMenuItem.Click += new System.EventHandler(this.fontColorToolStripMenuItem_Click);
             // 
