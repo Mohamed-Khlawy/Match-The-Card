@@ -403,6 +403,7 @@
             this.Name = "Welcome_Page";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to Match The Card";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Welcome_Page_FormClosing);
             this.Load += new System.EventHandler(this.Welcome_Page_Load);
             this.Cards_Panel.ResumeLayout(false);
             this.Players_Panel.ResumeLayout(false);

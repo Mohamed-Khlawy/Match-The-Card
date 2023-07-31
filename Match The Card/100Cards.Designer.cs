@@ -39,7 +39,7 @@
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl_Player_Turn = new System.Windows.Forms.Label();
-            this.lbl_Right_Cards = new System.Windows.Forms.Label();
+            this.lbl_Matched_Cards = new System.Windows.Forms.Label();
             this.Player3Points = new System.Windows.Forms.Label();
             this.Player2Points = new System.Windows.Forms.Label();
             this.Player1Points = new System.Windows.Forms.Label();
@@ -52,16 +52,24 @@
             this.Summary = new System.Windows.Forms.Button();
             this.Close = new System.Windows.Forms.Button();
             this.Game_Timer = new System.Windows.Forms.Timer(this.components);
+            this.menuItems = new System.Windows.Forms.MenuStrip();
+            this.designToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkGrayModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.whiteModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Timer_Panel.SuspendLayout();
             this.Points_Panel.SuspendLayout();
             this.Buttons_Panel.SuspendLayout();
+            this.menuItems.SuspendLayout();
             this.SuspendLayout();
             // 
             // Game_Panel
             // 
-            this.Game_Panel.Location = new System.Drawing.Point(3, 12);
+            this.Game_Panel.Location = new System.Drawing.Point(3, 40);
             this.Game_Panel.Name = "Game_Panel";
-            this.Game_Panel.Size = new System.Drawing.Size(1056, 957);
+            this.Game_Panel.Size = new System.Drawing.Size(1056, 920);
             this.Game_Panel.TabIndex = 0;
             // 
             // Timer_Panel
@@ -69,9 +77,9 @@
             this.Timer_Panel.Controls.Add(this.Resume_Pause_Timer);
             this.Timer_Panel.Controls.Add(this.Hide_Appear_Timer);
             this.Timer_Panel.Controls.Add(this.lbl_Timer);
-            this.Timer_Panel.Location = new System.Drawing.Point(1065, 12);
+            this.Timer_Panel.Location = new System.Drawing.Point(1065, 49);
             this.Timer_Panel.Name = "Timer_Panel";
-            this.Timer_Panel.Size = new System.Drawing.Size(714, 206);
+            this.Timer_Panel.Size = new System.Drawing.Size(714, 169);
             this.Timer_Panel.TabIndex = 1;
             // 
             // Resume_Pause_Timer
@@ -79,43 +87,47 @@
             this.Resume_Pause_Timer.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.Resume_Pause_Timer.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Resume_Pause_Timer.ForeColor = System.Drawing.Color.White;
-            this.Resume_Pause_Timer.Location = new System.Drawing.Point(428, 104);
+            this.Resume_Pause_Timer.Location = new System.Drawing.Point(428, 89);
             this.Resume_Pause_Timer.Name = "Resume_Pause_Timer";
             this.Resume_Pause_Timer.Size = new System.Drawing.Size(255, 80);
             this.Resume_Pause_Timer.TabIndex = 27;
             this.Resume_Pause_Timer.Text = "Pause Timer";
             this.Resume_Pause_Timer.UseVisualStyleBackColor = false;
             this.Resume_Pause_Timer.Click += new System.EventHandler(this.Resume_Pause_Timer_Timer_Click);
+            this.Resume_Pause_Timer.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
+            this.Resume_Pause_Timer.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // Hide_Appear_Timer
             // 
             this.Hide_Appear_Timer.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.Hide_Appear_Timer.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hide_Appear_Timer.ForeColor = System.Drawing.Color.White;
-            this.Hide_Appear_Timer.Location = new System.Drawing.Point(31, 104);
+            this.Hide_Appear_Timer.Location = new System.Drawing.Point(26, 89);
             this.Hide_Appear_Timer.Name = "Hide_Appear_Timer";
             this.Hide_Appear_Timer.Size = new System.Drawing.Size(255, 80);
             this.Hide_Appear_Timer.TabIndex = 26;
             this.Hide_Appear_Timer.Text = "Hide Timer";
             this.Hide_Appear_Timer.UseVisualStyleBackColor = false;
             this.Hide_Appear_Timer.Click += new System.EventHandler(this.Hide_Appear_Timer_Click);
+            this.Hide_Appear_Timer.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
+            this.Hide_Appear_Timer.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // lbl_Timer
             // 
-            this.lbl_Timer.Font = new System.Drawing.Font("Tahoma", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Timer.Font = new System.Drawing.Font("Tahoma", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Timer.ForeColor = System.Drawing.Color.White;
-            this.lbl_Timer.Location = new System.Drawing.Point(179, 16);
+            this.lbl_Timer.Location = new System.Drawing.Point(157, 23);
             this.lbl_Timer.Name = "lbl_Timer";
-            this.lbl_Timer.Size = new System.Drawing.Size(445, 65);
+            this.lbl_Timer.Size = new System.Drawing.Size(396, 53);
             this.lbl_Timer.TabIndex = 25;
-            this.lbl_Timer.Text = "Timer: ";
+            this.lbl_Timer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Points_Panel
             // 
             this.Points_Panel.Controls.Add(this.lbl2);
             this.Points_Panel.Controls.Add(this.lbl1);
             this.Points_Panel.Controls.Add(this.lbl_Player_Turn);
-            this.Points_Panel.Controls.Add(this.lbl_Right_Cards);
+            this.Points_Panel.Controls.Add(this.lbl_Matched_Cards);
             this.Points_Panel.Controls.Add(this.Player3Points);
             this.Points_Panel.Controls.Add(this.Player2Points);
             this.Points_Panel.Controls.Add(this.Player1Points);
@@ -143,33 +155,34 @@
             this.lbl1.ForeColor = System.Drawing.Color.White;
             this.lbl1.Location = new System.Drawing.Point(26, 303);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(240, 50);
+            this.lbl1.Size = new System.Drawing.Size(299, 50);
             this.lbl1.TabIndex = 33;
-            this.lbl1.Text = "Right Cards";
+            this.lbl1.Text = "Matched Cards";
             // 
             // lbl_Player_Turn
             // 
-            this.lbl_Player_Turn.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Player_Turn.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Player_Turn.ForeColor = System.Drawing.Color.White;
-            this.lbl_Player_Turn.Location = new System.Drawing.Point(493, 365);
+            this.lbl_Player_Turn.Location = new System.Drawing.Point(466, 365);
             this.lbl_Player_Turn.Name = "lbl_Player_Turn";
-            this.lbl_Player_Turn.Size = new System.Drawing.Size(163, 50);
+            this.lbl_Player_Turn.Size = new System.Drawing.Size(230, 50);
             this.lbl_Player_Turn.TabIndex = 32;
             // 
-            // lbl_Right_Cards
+            // lbl_Matched_Cards
             // 
-            this.lbl_Right_Cards.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Right_Cards.ForeColor = System.Drawing.Color.White;
-            this.lbl_Right_Cards.Location = new System.Drawing.Point(68, 365);
-            this.lbl_Right_Cards.Name = "lbl_Right_Cards";
-            this.lbl_Right_Cards.Size = new System.Drawing.Size(163, 50);
-            this.lbl_Right_Cards.TabIndex = 31;
+            this.lbl_Matched_Cards.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Matched_Cards.ForeColor = System.Drawing.Color.White;
+            this.lbl_Matched_Cards.Location = new System.Drawing.Point(113, 365);
+            this.lbl_Matched_Cards.Name = "lbl_Matched_Cards";
+            this.lbl_Matched_Cards.Size = new System.Drawing.Size(145, 50);
+            this.lbl_Matched_Cards.TabIndex = 31;
+            this.lbl_Matched_Cards.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Player3Points
             // 
-            this.Player3Points.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Player3Points.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player3Points.ForeColor = System.Drawing.Color.White;
-            this.Player3Points.Location = new System.Drawing.Point(222, 202);
+            this.Player3Points.Location = new System.Drawing.Point(337, 202);
             this.Player3Points.Name = "Player3Points";
             this.Player3Points.Size = new System.Drawing.Size(256, 50);
             this.Player3Points.TabIndex = 30;
@@ -177,9 +190,9 @@
             // 
             // Player2Points
             // 
-            this.Player2Points.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Player2Points.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player2Points.ForeColor = System.Drawing.Color.White;
-            this.Player2Points.Location = new System.Drawing.Point(222, 119);
+            this.Player2Points.Location = new System.Drawing.Point(337, 119);
             this.Player2Points.Name = "Player2Points";
             this.Player2Points.Size = new System.Drawing.Size(256, 50);
             this.Player2Points.TabIndex = 29;
@@ -187,9 +200,9 @@
             // 
             // Player1Points
             // 
-            this.Player1Points.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Player1Points.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player1Points.ForeColor = System.Drawing.Color.White;
-            this.Player1Points.Location = new System.Drawing.Point(222, 36);
+            this.Player1Points.Location = new System.Drawing.Point(337, 36);
             this.Player1Points.Name = "Player1Points";
             this.Player1Points.Size = new System.Drawing.Size(256, 50);
             this.Player1Points.TabIndex = 28;
@@ -197,31 +210,31 @@
             // 
             // Player3Name
             // 
-            this.Player3Name.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Player3Name.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player3Name.ForeColor = System.Drawing.Color.White;
             this.Player3Name.Location = new System.Drawing.Point(26, 202);
             this.Player3Name.Name = "Player3Name";
-            this.Player3Name.Size = new System.Drawing.Size(163, 50);
+            this.Player3Name.Size = new System.Drawing.Size(212, 50);
             this.Player3Name.TabIndex = 27;
             this.Player3Name.Text = "Player3";
             // 
             // Player2Name
             // 
-            this.Player2Name.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Player2Name.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player2Name.ForeColor = System.Drawing.Color.White;
             this.Player2Name.Location = new System.Drawing.Point(26, 119);
             this.Player2Name.Name = "Player2Name";
-            this.Player2Name.Size = new System.Drawing.Size(163, 50);
+            this.Player2Name.Size = new System.Drawing.Size(212, 50);
             this.Player2Name.TabIndex = 26;
             this.Player2Name.Text = "Player2";
             // 
             // Player1Name
             // 
-            this.Player1Name.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Player1Name.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player1Name.ForeColor = System.Drawing.Color.White;
             this.Player1Name.Location = new System.Drawing.Point(26, 36);
             this.Player1Name.Name = "Player1Name";
-            this.Player1Name.Size = new System.Drawing.Size(163, 50);
+            this.Player1Name.Size = new System.Drawing.Size(212, 50);
             this.Player1Name.TabIndex = 25;
             this.Player1Name.Text = "Player1";
             // 
@@ -247,6 +260,9 @@
             this.New.TabIndex = 34;
             this.New.Text = "New Game";
             this.New.UseVisualStyleBackColor = false;
+            this.New.Click += new System.EventHandler(this.New_Click);
+            this.New.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
+            this.New.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // Resume_Pause
             // 
@@ -259,6 +275,9 @@
             this.Resume_Pause.TabIndex = 33;
             this.Resume_Pause.Text = "Resume/Pause";
             this.Resume_Pause.UseVisualStyleBackColor = false;
+            this.Resume_Pause.Click += new System.EventHandler(this.Resume_Pause_Click);
+            this.Resume_Pause.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
+            this.Resume_Pause.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // Summary
             // 
@@ -271,6 +290,9 @@
             this.Summary.TabIndex = 32;
             this.Summary.Text = "Game Summary";
             this.Summary.UseVisualStyleBackColor = false;
+            this.Summary.Click += new System.EventHandler(this.Summary_Click);
+            this.Summary.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
+            this.Summary.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // Close
             // 
@@ -283,11 +305,73 @@
             this.Close.TabIndex = 31;
             this.Close.Text = "Close Game";
             this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            this.Close.MouseEnter += new System.EventHandler(this.Btn_MouseEnter);
+            this.Close.MouseLeave += new System.EventHandler(this.Btn_MouseLeave);
             // 
             // Game_Timer
             // 
             this.Game_Timer.Interval = 1000;
             this.Game_Timer.Tick += new System.EventHandler(this.Game_Timer_Tick);
+            // 
+            // menuItems
+            // 
+            this.menuItems.BackColor = System.Drawing.Color.DodgerBlue;
+            this.menuItems.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.designToolStripMenuItem,
+            this.themeToolStripMenuItem});
+            this.menuItems.Location = new System.Drawing.Point(0, 0);
+            this.menuItems.Name = "menuItems";
+            this.menuItems.Size = new System.Drawing.Size(1832, 28);
+            this.menuItems.TabIndex = 2;
+            this.menuItems.Text = "menuStrip1";
+            // 
+            // designToolStripMenuItem
+            // 
+            this.designToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pageColorToolStripMenuItem,
+            this.fontColorToolStripMenuItem});
+            this.designToolStripMenuItem.Name = "designToolStripMenuItem";
+            this.designToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.designToolStripMenuItem.Text = "Design";
+            // 
+            // pageColorToolStripMenuItem
+            // 
+            this.pageColorToolStripMenuItem.Name = "pageColorToolStripMenuItem";
+            this.pageColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pageColorToolStripMenuItem.Text = "Page Color";
+            this.pageColorToolStripMenuItem.Click += new System.EventHandler(this.pageColorToolStripMenuItem_Click);
+            // 
+            // fontColorToolStripMenuItem
+            // 
+            this.fontColorToolStripMenuItem.Name = "fontColorToolStripMenuItem";
+            this.fontColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fontColorToolStripMenuItem.Text = "Font Color";
+            this.fontColorToolStripMenuItem.Click += new System.EventHandler(this.fontColorToolStripMenuItem_Click);
+            // 
+            // themeToolStripMenuItem
+            // 
+            this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darkGrayModeToolStripMenuItem,
+            this.whiteModeToolStripMenuItem});
+            this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.themeToolStripMenuItem.Text = "Theme";
+            // 
+            // darkGrayModeToolStripMenuItem
+            // 
+            this.darkGrayModeToolStripMenuItem.Name = "darkGrayModeToolStripMenuItem";
+            this.darkGrayModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.darkGrayModeToolStripMenuItem.Text = "Dark Gray Mode";
+            this.darkGrayModeToolStripMenuItem.Click += new System.EventHandler(this.darkGrayModeToolStripMenuItem_Click);
+            // 
+            // whiteModeToolStripMenuItem
+            // 
+            this.whiteModeToolStripMenuItem.Name = "whiteModeToolStripMenuItem";
+            this.whiteModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.whiteModeToolStripMenuItem.Text = "White Mode";
+            this.whiteModeToolStripMenuItem.Click += new System.EventHandler(this.whiteModeToolStripMenuItem_Click);
             // 
             // _100Cards
             // 
@@ -299,17 +383,24 @@
             this.Controls.Add(this.Points_Panel);
             this.Controls.Add(this.Timer_Panel);
             this.Controls.Add(this.Game_Panel);
+            this.Controls.Add(this.menuItems);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuItems;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1850, 1028);
             this.Name = "_100Cards";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "100Cards_Game Version";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._100Cards_FormClosing);
+            this.Load += new System.EventHandler(this._100Cards_Load);
             this.Timer_Panel.ResumeLayout(false);
             this.Points_Panel.ResumeLayout(false);
             this.Buttons_Panel.ResumeLayout(false);
+            this.menuItems.ResumeLayout(false);
+            this.menuItems.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -331,11 +422,18 @@
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl_Player_Turn;
-        private System.Windows.Forms.Label lbl_Right_Cards;
+        private System.Windows.Forms.Label lbl_Matched_Cards;
         private System.Windows.Forms.Button New;
         private System.Windows.Forms.Button Resume_Pause;
         private System.Windows.Forms.Button Summary;
         private System.Windows.Forms.Button Close;
         private System.Windows.Forms.Timer Game_Timer;
+        private System.Windows.Forms.MenuStrip menuItems;
+        private System.Windows.Forms.ToolStripMenuItem designToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pageColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fontColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem themeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darkGrayModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem whiteModeToolStripMenuItem;
     }
 }

@@ -123,16 +123,16 @@ namespace Match_The_Card
 
         private void Start_Click(object sender, EventArgs e)
         {
-            if(NumberOfCards==50)
+            if (NumberOfCards == 50)
             {
                 _50Cards _50Cards = new _50Cards();
                 _50Cards.Show();
                 this.Hide();
             }
-            else if(NumberOfCards==100)
+            else if (NumberOfCards == 100)
             {
-                _100Cards _100Cards = new _100Cards(NumberOfPlayers, selectedLevel);
-                //_100Cards.GameLevel = selectedLevel;
+                _100Cards _100Cards = new _100Cards(NumberOfPlayers, selectedLevel,
+                    txt_Player1.Text, txt_Player2.Text, txt_Player3.Text);
                 _100Cards.Show();
                 this.Hide();
             }
@@ -146,6 +146,11 @@ namespace Match_The_Card
             {
                 Application.Exit();
             }
+        }
+
+        private void Welcome_Page_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
