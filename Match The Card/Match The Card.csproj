@@ -71,6 +71,9 @@
     <EmbeddedResource Include="100Cards.resx">
       <DependentUpon>100Cards.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="50Cards.resx">
+      <DependentUpon>50Cards.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

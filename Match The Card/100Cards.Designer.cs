@@ -362,14 +362,14 @@
             // darkGrayModeToolStripMenuItem
             // 
             this.darkGrayModeToolStripMenuItem.Name = "darkGrayModeToolStripMenuItem";
-            this.darkGrayModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.darkGrayModeToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.darkGrayModeToolStripMenuItem.Text = "Dark Gray Mode";
             this.darkGrayModeToolStripMenuItem.Click += new System.EventHandler(this.darkGrayModeToolStripMenuItem_Click);
             // 
             // whiteModeToolStripMenuItem
             // 
             this.whiteModeToolStripMenuItem.Name = "whiteModeToolStripMenuItem";
-            this.whiteModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.whiteModeToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.whiteModeToolStripMenuItem.Text = "White Mode";
             this.whiteModeToolStripMenuItem.Click += new System.EventHandler(this.whiteModeToolStripMenuItem_Click);
             // 

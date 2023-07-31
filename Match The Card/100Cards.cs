@@ -504,7 +504,6 @@ namespace Match_The_Card
         {
             Game_Timer.Stop();
             timerValue = 0;
-            //Game_Timer.Start();
         }
         private void New_Click(object sender, EventArgs e)
         {
@@ -588,8 +587,6 @@ namespace Match_The_Card
                      "Match The Card Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (close == DialogResult.OK)
             {
-                //Welcome_Page welcome_Page = new Welcome_Page();
-                //welcome_Page.Show();
                 this.Close();
             }
         }
@@ -603,7 +600,21 @@ namespace Match_The_Card
             Button button = (Button)sender;
             button.BackColor = Color.DeepSkyBlue;
         }
-
+        private void Btn_MouseEnter_Theme(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.DarkGray;
+        }
+        private void Btn_MouseLeave_Theme(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.LightGray;
+        }
+        private void Btn_MouseLeave_WhiteTheme(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.White;
+        }
         private void _100Cards_FormClosing(object sender, FormClosingEventArgs e)
         {
             Welcome_Page welcome_Page = new Welcome_Page();
@@ -617,6 +628,22 @@ namespace Match_The_Card
             {
                 this.BackColor = colorDialog.Color;
                 menuItems.BackColor = colorDialog.Color;
+                foreach (Control control in Game_Panel.Controls)
+                {
+                    control.BackColor = colorDialog.Color;
+                }
+                foreach (Control control in Timer_Panel.Controls)
+                {
+                    control.BackColor = colorDialog.Color;
+                }
+                foreach (Control control in Points_Panel.Controls)
+                {
+                    control.BackColor = colorDialog.Color;
+                }
+                foreach (Control control in Buttons_Panel.Controls)
+                {
+                    control.BackColor = colorDialog.Color;
+                }
             }
         }
 
@@ -685,14 +712,29 @@ namespace Match_The_Card
             foreach (Control control in Timer_Panel.Controls)
             {
                 control.BackColor = Color.LightGray;
+                if (control is Button)
+                {
+                    control.MouseEnter += Btn_MouseEnter_Theme;
+                    control.MouseLeave += Btn_MouseLeave_Theme;
+                }
             }
             foreach (Control control in Points_Panel.Controls)
             {
                 control.BackColor = Color.LightGray;
+                if (control is Button)
+                {
+                    control.MouseEnter += Btn_MouseEnter_Theme;
+                    control.MouseLeave += Btn_MouseLeave_Theme;
+                }
             }
             foreach (Control control in Buttons_Panel.Controls)
             {
                 control.BackColor = Color.LightGray;
+                if (control is Button)
+                {
+                    control.MouseEnter += Btn_MouseEnter_Theme;
+                    control.MouseLeave += Btn_MouseLeave_Theme;
+                }
             }
         }
 
@@ -736,14 +778,29 @@ namespace Match_The_Card
             foreach (Control control in Timer_Panel.Controls)
             {
                 control.BackColor = Color.White;
+                if (control is Button)
+                {
+                    control.MouseEnter += Btn_MouseEnter_Theme;
+                    control.MouseLeave += Btn_MouseLeave_WhiteTheme;
+                }
             }
             foreach (Control control in Points_Panel.Controls)
             {
                 control.BackColor = Color.White;
+                if (control is Button)
+                {
+                    control.MouseEnter += Btn_MouseEnter_Theme;
+                    control.MouseLeave += Btn_MouseLeave_WhiteTheme;
+                }
             }
             foreach (Control control in Buttons_Panel.Controls)
             {
                 control.BackColor = Color.White;
+                if (control is Button)
+                {
+                    control.MouseEnter += Btn_MouseEnter_Theme;
+                    control.MouseLeave += Btn_MouseLeave_WhiteTheme;
+                }
             }
         }
     }

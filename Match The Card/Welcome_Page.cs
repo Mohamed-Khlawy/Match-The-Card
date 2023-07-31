@@ -125,7 +125,8 @@ namespace Match_The_Card
         {
             if (NumberOfCards == 50)
             {
-                _50Cards _50Cards = new _50Cards();
+                _50Cards _50Cards = new _50Cards(NumberOfPlayers, selectedLevel,
+                    txt_Player1.Text, txt_Player2.Text, txt_Player3.Text);
                 _50Cards.Show();
                 this.Hide();
             }
